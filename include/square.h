@@ -1,5 +1,6 @@
 #include <map>
 #include <cmath>
+#include "memoize.h"
 
 namespace cppcourse {
 
@@ -10,20 +11,12 @@ template <typename T> class Square {
 
 private:
 	auto square(const T& n) const -> T{return n*n;}
-
 public:
 
 	T get(const T& s) const{
 
-		T pos_s = std::abs(s);
-		auto it = _data.find(pos_s);
-
-		if (it == _data.end()){
-			std::cout << "New calculation" << std::endl;
-			_data[pos_s] = square(pos_s);
-		}
-
-		return _data[pos_s];
+		return square(s);
+		// return memo(square)(s);
 	}
 
 

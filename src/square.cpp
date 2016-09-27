@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "square.h"
+#include "memoize.h"
 
 int main () {
 	
