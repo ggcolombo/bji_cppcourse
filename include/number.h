@@ -20,6 +20,17 @@ struct Number {
         pNum = new int(n);
     }
 
+    void swap(Number& n)
+    {
+        std::swap(this->pNum, n.pNum);
+    }
+
+    Number operator= (const Number& rhs){
+        Number temp(rhs);
+        swap(temp);
+        return *this;
+    }
+
     Number operator+ (Number& number){
         return Number(*(pNum) + *(number.pNum));
     };
