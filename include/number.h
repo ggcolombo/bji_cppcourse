@@ -25,30 +25,27 @@ struct Number {
         std::swap(this->pNum, n.pNum);
     }
 
-    Number operator= (const Number& rhs){
+    Number add (const Number& n) const
+    {
+        return Number(*(pNum) + *(n.pNum));
+    }
+
+    Number& operator= (const Number& rhs){
         Number temp(rhs);
         swap(temp);
         return *this;
     }
 
-    Number operator+ (Number& number){
-        return Number(*(pNum) + *(number.pNum));
-    };
-
-    Number operator+ (int number){
-        return Number(*(pNum) + number);
-    };
-
-    friend Number operator+ (int n, Number& number);
     friend std::ostream& operator<< (std::ostream& os, const Number& number);
 
     int* pNum;
 };
 
 
-Number operator+ (int n, Number& number){
-    return Number(n + *(number.pNum));
+inline Number operator+ (const Number& lhs, const Number& rhs){
+    return lhs.add(rhs);
 };
+
 
 std::ostream& operator<< (std::ostream& os, const Number& number){
     return os << *(number.pNum);
