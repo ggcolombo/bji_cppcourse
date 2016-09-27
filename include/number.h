@@ -25,7 +25,7 @@ struct Number {
         std::swap(this->pNum, n.pNum);
     }
 
-    Number add (const Number& n) const
+    virtual Number add (const Number& n) const
     {
         return Number(*(pNum) + *(n.pNum));
     }
@@ -42,7 +42,9 @@ private:
     int* pNum;
 };
 
-
+// This allow polymorphic binary operators,
+// i.e. children classes of Number would inherit the operator
+// and override the method 'add'
 inline Number operator+ (const Number& lhs, const Number& rhs){
     return lhs.add(rhs);
 };
