@@ -11,7 +11,7 @@ struct Number {
         pNum = nullptr;
     }
     
-    ~Number(){
+    ~Number()noexcept(true){
         delete pNum;
     }
 
