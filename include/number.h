@@ -38,6 +38,7 @@ struct Number {
 
     friend std::ostream& operator<< (std::ostream& os, const Number& number);
 
+private:
     int* pNum;
 };
 
