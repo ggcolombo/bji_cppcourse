@@ -27,11 +27,11 @@ public:
 
         if (memoized == _table.end()){
             auto const r = _f(args...);
-            _table.push_back({ {args...}, r});
+            _table.push_back({ argsAsTuple, r});
             return r;
         } else {
             std::cout << "Usin cache ... " << std::endl;
-            return memoized.second;
+            return memoized->second;
         }
     }
 
