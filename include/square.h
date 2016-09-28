@@ -6,17 +6,16 @@ namespace cppcourse {
 
 template <typename T> class Square {
 
-	mutable
-	std::map<T, T> _data;
-
 private:
 	auto square(const T& n) const -> T{return n*n;}
+    //std::function<T (T)> msquare = memo<T, T>(square);
+    //auto msquare = memo<T, T>(square);
+
 public:
 
 	T get(const T& s) const{
 
 		return square(s);
-		// return memo(square)(s);
 	}
 
 
