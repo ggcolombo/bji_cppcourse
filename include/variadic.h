@@ -15,5 +15,24 @@ T sum(T t, R... r)
     return t;
 }
 
+template<typename T, typename... R>
+T mean(T t, R... r)
+{
+    t += sum(r...);
+    t /= (sizeof...(r) + 1);
+
+    return t;
+}
+
+template<typename T, typename... R>
+T wmean(T t, T wt, R... r)
+{
+    t *= wt;
+    t += sum(r...);
+    t /= (sizeof...(r) + wt);
+
+    return t;
+}
+
 }
 #endif
