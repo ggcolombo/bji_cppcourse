@@ -16,10 +16,10 @@ private:
 
 public:
 
-	T get(const T& s) const{
-
-		return square(s);
-	}
+    T operator()(const T& s) const
+    {
+        return square(s);
+    }
 
 
 };
