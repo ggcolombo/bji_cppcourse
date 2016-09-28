@@ -3,6 +3,7 @@
 
 #include "square.h"
 #include "memoize.h"
+#include "memoizer.h"
 
 double square (double n) {return n*n;}
 
@@ -19,6 +20,10 @@ int main () {
     auto squarem = memo<double, double>(square);
     std::cout << squarem(4) << std::endl;
     std::cout << squarem(4) << std::endl;
+
+    auto squarem2 = Memoizer(square);
+    std::cout << squarem2(4) << std::endl;
+    std::cout << squarem2(4) << std::endl;
 
 	return 0;
 }
