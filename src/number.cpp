@@ -12,6 +12,7 @@ int main () {
     Number n4 = n1 + 1;
     Number n5 = 10 + n2;
     n6 = n1;
+    n2 = 1;
     std::cout << n1 << " "
             << n2 << " "
             << n3 << " "

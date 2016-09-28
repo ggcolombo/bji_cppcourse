@@ -30,9 +30,23 @@ struct Number {
         return Number(*(pNum) + *(n.pNum));
     }
 
+    Number(const Number& n) : pNum(n.pNum)
+    {}
+
+    Number(Number&& n) : pNum(std::move(n.pNum))
+    {}
+
     Number& operator= (const Number& rhs){
+        std::cout << "Assigning ..." << std::endl;
         Number temp(rhs);
         swap(temp);
+        return *this;
+    }
+
+
+    Number& operator= (Number&& rhs){
+        std::cout << "Moving ..." << std::endl;
+        std::swap(pNum, rhs.pNum);
         return *this;
     }
 
