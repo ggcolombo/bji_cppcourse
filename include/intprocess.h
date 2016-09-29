@@ -5,7 +5,8 @@
 #include "iprocess.h"
 #include "diagnosticcount.h"
 
-class IntProcess : public IProcess, private DiagnosticCount
+class IntProcess : public IProcess,
+	private DiagnosticCount<IntProcess>
 {
 	int _data;
 

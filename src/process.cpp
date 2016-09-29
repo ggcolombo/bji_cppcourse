@@ -8,8 +8,6 @@ using namespace std;
 #include "processhandle.h"
 #include "processfactory.h"
 
-int DiagnosticCount::_count = 0;
-
 int main()
 {
 	cout << "Hello, world!" << endl;
@@ -38,6 +36,13 @@ int main()
 
 	for (auto h : handles)
 		cout << h.doProcess(1) << endl;
+
+	cout << "Created a total of "
+		<< DiagnosticCount<StringProcess>::getCount()
+		<< " string objects and a total of "
+		<< DiagnosticCount<IntProcess>::getCount()
+		<< " int objects!"
+		<< std::endl;
 
 	return 0;
 }

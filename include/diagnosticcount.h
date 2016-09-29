@@ -3,6 +3,7 @@
 
 #include <iostream>
 
+template <typename T>
 class DiagnosticCount
 {
 	static int _count;
@@ -17,6 +18,10 @@ public:
 		std::cerr << "Destroying object no: " << _index << std::endl;
 	}
 
+	static int getCount() { return _count; }
+
 };
 
+template<typename T>
+int DiagnosticCount<T>::_count = 0;
 #endif
