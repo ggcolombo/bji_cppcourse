@@ -18,6 +18,7 @@ public:
 			std::to_string(_data + n);
 		return msg;
 	}
+	~IntProcess() noexcept(true) {}
 };
 
 #endif

@@ -14,6 +14,7 @@ public:
 	{
 		return _data + std::to_string(n) + "! :)";
 	}
+	virtual ~StringProcess() noexcept(true) {};
 };
 
 

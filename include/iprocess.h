@@ -4,6 +4,7 @@
 class IProcess
 {
 public:
+	virtual ~IProcess() noexcept(true) {};
 	virtual std::string processData(int n) = 0;
 };
 
