@@ -4,6 +4,7 @@
 using namespace std;
 
 #include "stringprocess.h"
+#include "intprocess.h"
 #include "processhandle.h"
 
 int main()
@@ -23,7 +24,8 @@ int main()
 		make_shared<StringProcess>("one == ")));
 	handles.push_back(ProcessHandle(
 		make_shared<StringProcess>("two != ")));
-
+	handles.push_back(ProcessHandle(
+		make_shared<IntProcess>(1)));
 	for (auto h : handles)
 		cout << h.doProcess(1) << endl;
 
