@@ -3,6 +3,7 @@
 
 class IProcess
 {
+public:
 	virtual std::string processData(int n) = 0;
 };
 
