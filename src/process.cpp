@@ -19,8 +19,10 @@ int main()
 	cout << msg2 << endl;
 
 	vector<ProcessHandle> handles;
-	handles.push_back(ProcessHandle(make_shared<StringProcess>("one == ")));
-	handles.push_back(ProcessHandle(make_shared<StringProcess>("two != ")));
+	handles.push_back(ProcessHandle(
+		make_shared<StringProcess>("one == ")));
+	handles.push_back(ProcessHandle(
+		make_shared<StringProcess>("two != ")));
 
 	for (auto h : handles)
 		cout << h.doProcess(1) << endl;
