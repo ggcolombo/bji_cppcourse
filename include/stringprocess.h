@@ -11,7 +11,7 @@ public:
 	StringProcess(const std::string& data): _data(data){}
 	std::string processData(int n) override
 	{
-		return _data + std::to_string(n);
+		return _data + std::to_string(n) + "! :)";
 	}
 };
 

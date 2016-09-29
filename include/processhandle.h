@@ -13,7 +13,7 @@ public:
 
 	std::string doProcess(int n)
 	{
-		return _body->processData(n);
+		return "I am handling this: " + _body->processData(n);
 	}
 
 };
