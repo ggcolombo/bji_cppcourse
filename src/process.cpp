@@ -6,6 +6,7 @@ using namespace std;
 #include "stringprocess.h"
 #include "intprocess.h"
 #include "processhandle.h"
+#include "processfactory.h"
 
 int main()
 {
@@ -26,6 +27,13 @@ int main()
 		make_shared<StringProcess>("two != ")));
 	handles.push_back(ProcessHandle(
 		make_shared<IntProcess>(1)));
+	handles.push_back(ProcessHandle(
+		ProcessFactory::create(
+			ProcessFactory::ProcessType::STRING, "three != ")));
+	handles.push_back(ProcessHandle(
+		ProcessFactory::create(
+			ProcessFactory::ProcessType::INT, "2")));
+
 	for (auto h : handles)
 		cout << h.doProcess(1) << endl;
 
