@@ -1,4 +1,5 @@
-
+#ifndef PROCESSHANDLE_H_
+#define PROCESSHANDLE_H_
 
 #include <string>
 #include <memory>
@@ -18,3 +19,4 @@ public:
 
 };
 
+#endif
