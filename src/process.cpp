@@ -8,6 +8,8 @@ using namespace std;
 #include "processhandle.h"
 #include "processfactory.h"
 
+int DiagnosticCount::_count = 0;
+
 int main()
 {
 	cout << "Hello, world!" << endl;

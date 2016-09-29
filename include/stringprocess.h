@@ -3,8 +3,9 @@
 
 #include <string>
 #include "iprocess.h"
+#include  "diagnosticcount.h"
 
-class StringProcess : public IProcess
+class StringProcess : public IProcess, private DiagnosticCount
 {
 	std::string _data;
 public:

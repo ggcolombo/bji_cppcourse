@@ -3,8 +3,9 @@
 
 #include <string>
 #include "iprocess.h"
+#include "diagnosticcount.h"
 
-class IntProcess : public IProcess
+class IntProcess : public IProcess, private DiagnosticCount
 {
 	int _data;
 
